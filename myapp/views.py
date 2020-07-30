@@ -4,20 +4,24 @@ from .models import *
 # Create your views here.
 
 
-def Home_page(request, category_slug=None):
+def Home_page(request):
     about_me = AboutMe.objects.all().order_by('-id')[:1]
     time_line = TimeLine.objects.all()
+    context = {'about_me': about_me, 'time_line': time_line}
+    return render(request, 'home/home.html', context)
+
+def portfolio(request, category_slug=None):
     category = None
     portfolio_cats = PortfolioCategory.objects.all()
     portfolio = Portfolio.objects.all()
     if category_slug:
         category = get_object_or_404(PortfolioCategory, slug=category_slug)
         portfolio = portfolio.filter(category=category)
+
     context = {'category':category, 'portfolio_cats': portfolio_cats,
-           'portfolio': portfolio, 'about_me': about_me, 'time_line': time_line}
+           'portfolio': portfolio}
 
-    return render(request, 'home/home.html', context)
-
+    return render(request, 'home/portfolio.html', context)
 
 def contact(request):
     if request.method == 'POST':
