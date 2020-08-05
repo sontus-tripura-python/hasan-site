@@ -22,7 +22,8 @@ def portfolio(request, category_slug=None):
            'portfolio': portfolio}
 
     return render(request, 'home/portfolio.html', context)
-
+def test_list(request):
+    return render(request, 'test.html')
 def contact(request):
     if request.method == 'POST':
         name =request.POST['name']
