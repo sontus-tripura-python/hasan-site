@@ -25,8 +25,8 @@ SECRET_KEY = '%r)#fbw796mgc^0io+jguzi&ci4@c62hth*vu$!r3#xx7xtp7p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [sontustrp.herokuapp.com]
-
+ALLOWED_HOSTS = []
+# sontustrp.herokuapp.com
 
 # Application definition
 
