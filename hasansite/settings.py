@@ -25,7 +25,7 @@ SECRET_KEY = '%r)#fbw796mgc^0io+jguzi&ci4@c62hth*vu$!r3#xx7xtp7p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sontustrp.heroku.com', '127.0.0.1' ]
+ALLOWED_HOSTS = ['sontustrp.heroku.com']
 
 
 # Application definition
@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'SONTUS',
         'USER':  'postgres',
         'PASSWORD': 'programmer2020',
-        'HOST': 'localhost',
+        'HOST': 'sontustrp.heroku.com',
         'PORT': '5432'
     }
 }
