@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +25,7 @@ SECRET_KEY = '%r)#fbw796mgc^0io+jguzi&ci4@c62hth*vu$!r3#xx7xtp7p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'sontustrp.herokuapp.com']
+ALLOWED_HOSTS = [ 'sontustrp.herokuapp.com', '127.0.0.1']
 # sontustrp.herokuapp.com
 
 # Application definition
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'hasansite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'xxxx',
+        'NAME': 'SONTUS',
         'USER':  'postgres',
-        'PASSWORD': 'xxxx',
+        'PASSWORD': 'programmer2020',
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -133,3 +133,4 @@ STACTICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STACTICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals()
